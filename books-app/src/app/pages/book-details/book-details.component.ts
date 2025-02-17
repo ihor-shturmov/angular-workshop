@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BookForm } from '../../types/book';
 import { SelectFileDirective } from '../../directives/select-file.directive';
-import { MatButton } from '@angular/material/button';
+import { MatAnchor, MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { FormatImagePathPipe } from '../../pipes/format-image-path.pipe';
@@ -19,7 +19,8 @@ import { FormatImagePathPipe } from '../../pipes/format-image-path.pipe';
     MatFormField,
     MatLabel,
     MatInput,
-    FormatImagePathPipe
+    FormatImagePathPipe,
+    MatAnchor
   ],
   templateUrl: './book-details.component.html',
   styleUrl: './book-details.component.scss'

@@ -11,13 +11,14 @@
     <mat-label>Author</mat-label>
     <input matInput type="text" formControlName="author" required>
   </mat-form-field>
-  <div *ngIf="form.controls.image.value" class="my-4">
-    <img [src]="form.controls.image.value | formatImagePath" alt="Book image"
-         class="w-64 h-32 object-cover rounded-md border"/>
-  </div>
-  <button mat-raised-button color="primary" type="button" appSelectFile (fileSelected)="handleFileChange($event[0])">
-    Select Image
-  </button>
-  <button mat-raised-button color="accent" type="submit" [disabled]="form.invalid">Save Book</button>
+  @if (form.controls.image.value) {
+    <div class="my-4">
+      <img [src]="form.controls.image.value | formatImagePath" alt="Book image"
+           class="w-150 h-52 object-cover rounded-md border"/>
+    </div>
+  }
+
+  <a appSelectFile (fileSelected)="handleFileChange($event[0])" class="text-blue-500 hover:underline cursor-pointer">Select Image</a>
+  <button mat-raised-button color="" type="submit" [disabled]="form.invalid">Save Book</button>
   <button mat-button color="warn" type="button" routerLink="../">Cancel</button>
 </form>
