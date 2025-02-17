@@ -2,7 +2,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from '../../types/book';
 import { FormatImagePathPipe } from '../../pipes/format-image-path.pipe';
 import { RouterLink } from '@angular/router';
-import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardImage } from '@angular/material/card';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardImage,
+  MatCardTitle
+} from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 
 @Component({
@@ -13,6 +20,7 @@ import { MatButton } from '@angular/material/button';
     MatCard,
     MatButton,
     MatCardHeader,
+    MatCardTitle,
     MatCardContent,
     MatCardImage,
     MatCardActions
