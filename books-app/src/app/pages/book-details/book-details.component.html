@@ -1,22 +1,23 @@
-<form [formGroup]="form" (ngSubmit)="save()">
-
-  <mat-form-field>
+<form [formGroup]="form" (ngSubmit)="save()" class="p-6 space-y-4 bg-white shadow-lg rounded-lg">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Title</mat-label>
-    <input matInput type="text" formControlName="title">
+    <input matInput type="text" formControlName="title" required>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Description</mat-label>
-    <input matInput type="text" formControlName="description">
+    <textarea matInput formControlName="description" required></textarea>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Author</mat-label>
-    <input matInput type="text" formControlName="author">
+    <input matInput type="text" formControlName="author" required>
   </mat-form-field>
-  @if (form.controls.image.value) {
-    <img [src]="form.controls.image.value | formatImagePath" alt="Book image" width="250" height="100">
-  }
-  <button mat-raised-button type="button" appSelectFile (fileSelected)="handleFileChange($event[0])">Select image</button>
-
-  <button mat-button type="submit" [disabled]="form.invalid">Save book</button>
-  <button mat-button type="button" routerLink="../">Back to the list</button>
+  <div *ngIf="form.controls.image.value" class="my-4">
+    <img [src]="form.controls.image.value | formatImagePath" alt="Book image"
+         class="w-64 h-32 object-cover rounded-md border"/>
+  </div>
+  <button mat-raised-button color="primary" type="button" appSelectFile (fileSelected)="handleFileChange($event[0])">
+    Select Image
+  </button>
+  <button mat-raised-button color="accent" type="submit" [disabled]="form.invalid">Save Book</button>
+  <button mat-button color="warn" type="button" routerLink="../">Cancel</button>
 </form>

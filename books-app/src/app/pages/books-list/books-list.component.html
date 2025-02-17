@@ -1,5 +1,12 @@
-<button mat-button routerLink="add">Add book</button>
-<div class="grid grid-cols-5 gap-4 mx-1.5 cursor-pointer mt-2">
-  <app-book-card *ngFor="let book of books" [book]="book" (delete)="deleteBook($event)"/>
-</div>
-
+@if (books?.length) {
+  <div class="grid grid-cols-5 gap-4 mx-1.5 cursor-pointer mt-2">
+    <app-book-card *ngFor="let book of books" [book]="book" (delete)="deleteBook($event)"/>
+  </div>
+} @else {
+  <div class="flex flex-col items-center mt-10">
+    <p class="text-lg text-gray-500 mb-4">No books available. Add some to get started!</p>
+    <button mat-raised-button color="primary" routerLink="add" class="px-6 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg shadow-lg">
+      Add Book
+    </button>
+  </div>
+}

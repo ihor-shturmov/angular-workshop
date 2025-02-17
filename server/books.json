@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "Romeo & Juliet",
+    "author": "W. Shakespeare",
+    "description": "A beautiful romance novel",
+    "image": "uploads/1739795385596-book-image.png"
+  }
+]
