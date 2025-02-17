@@ -1,0 +1,5 @@
+<button mat-button routerLink="add">Add book</button>
+<div class="grid grid-cols-5 gap-4 mx-1.5 cursor-pointer mt-2">
+  <app-book-card *ngFor="let book of books" [book]="book" (delete)="deleteBook($event)"/>
+</div>
+

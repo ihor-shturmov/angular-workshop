@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput type="text" formControlName="title">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput type="text" formControlName="description">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Author</mat-label>
+    <input matInput type="text" formControlName="author">
+  </mat-form-field>
+  @if (form.controls.image.value) {
+    <img [src]="form.controls.image.value | formatImagePath" alt="Book image" width="250" height="100">
+  }
+  <button mat-raised-button type="button" appSelectFile (fileSelected)="handleFileChange($event[0])">Select image</button>
+
+  <button mat-button type="submit" [disabled]="form.invalid">Save book</button>
+  <button mat-button type="button" routerLink="../">Back to the list</button>
+</form>
