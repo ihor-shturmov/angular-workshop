@@ -18,7 +18,9 @@
     </div>
   }
 
-  <a appSelectFile (fileSelected)="handleFileChange($event[0])" class="text-blue-500 hover:underline cursor-pointer">Select Image</a>
+  <a appSelectFile (fileSelected)="handleFileChange($event[0])" class="text-blue-500 hover:underline cursor-pointer">
+    Select Image
+  </a>
   <button mat-raised-button color="" type="submit" [disabled]="form.invalid">Save Book</button>
   <button mat-button color="warn" type="button" routerLink="../">Cancel</button>
 </form>
